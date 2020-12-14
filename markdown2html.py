@@ -34,11 +34,13 @@ def mark_down_parser(filename, output_html_name):
             elif mark_line[0] == "*":
                 new_html = lists(mark_line, new_html, ul, "*")
                 ul = True
-            elif mark_line[0] not in ['*', '-', '#', '_', '[', '(']:
+            elif mark_line[0] not in ['*', '-']:
                 if len(mark_line) > 1:
                     br = True if text else False
                     new_html = text_html(mark_line, new_html, text, br)
                     text = True
+                else:
+                    text = False
     return create_html(new_html, output_html_name)
 
 def create_html(almost_html, output_html_name):
@@ -199,8 +201,8 @@ def md5_n_c(html_to_new):
         if not c:
             transform = html_to_new[index + 2:index_2]
             transform = hashlib.md5(transform.encode()).hexdigest()
-
         else:
+            transform = html_to_new[index + 2: index_2]
             transform = transform.replace("c", "")
             transform = transform.replace("C", "")
         html_to_new = html_to_new[:index] + transform + html_to_new[index_2 + 2:]
@@ -208,7 +210,6 @@ def md5_n_c(html_to_new):
             
 if __name__ == '__main__':
     if len(sys.argv) != 3:
-        print(len(sys.argv))
         print("Usage: ./markdown2html.py README.md README.html")
         exit(1)
     file_entrance(sys.argv[1], sys.argv[2])

@@ -206,9 +206,7 @@ def md5_n_c(html_to_new):
     return html_to_new
             
 if __name__ == '__main__':
-    #remember to change the fucking argv indexes because it's workinf on windows
-    #but it's going to be tested on linux you cunt!
-    if len(sys.argv) != 3:
+    if len(sys.argv) != 2:
         print("Usage: ./markdown2html.py README.md README.html")
         exit(1)
-    file_entrance(sys.argv[1], sys.argv[2])
+    file_entrance(sys.argv[0], sys.argv[1])

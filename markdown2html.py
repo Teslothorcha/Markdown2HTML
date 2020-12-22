@@ -15,6 +15,7 @@ def file_entrance(markdown_file, output_html_name):
         mark_down_parser(markdown_file, output_html_name)
     except IOError:
         print("Missing {file}".format(file=markdown_file))
+        exit(1)
 
 def mark_down_parser(filename, output_html_name):
     """

@@ -53,7 +53,7 @@ def create_html(almost_html, output_html_name):
     file = open(output_html_name, "w") 
     file.write(almost_html) 
     file.close()
-    return file
+    exit(0)
 
 def headings(line, new_html):
     """

@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""bullshit"""
 import sys
 import hashlib 
 
@@ -19,6 +20,7 @@ def file_entrance(markdown_file, output_html_name):
 
 def mark_down_parser(filename, output_html_name):
     """
+    bullshit 1
     """
     ul = False
     text = False
@@ -46,6 +48,7 @@ def mark_down_parser(filename, output_html_name):
 
 def create_html(almost_html, output_html_name):
     """
+    bullshit 2
     """
     file = open(output_html_name, "w") 
     file.write(almost_html) 
@@ -54,6 +57,7 @@ def create_html(almost_html, output_html_name):
 
 def headings(line, new_html):
     """
+    bullshit 3
     """
     kind = line.count("#")
     chars = line.split()
@@ -62,6 +66,7 @@ def headings(line, new_html):
 
 def string_cleaner(string, to_clean):
     """
+    bullshit 4
     """
     return [
         m if m != "c" else "" 
@@ -71,6 +76,7 @@ def string_cleaner(string, to_clean):
 
 def add_h_tags(almost_html, kind):
     """
+    bullshit 5
     """
     text = ""
     tags = ["<", "/", "h", kind, ">"]
@@ -84,6 +90,7 @@ def add_h_tags(almost_html, kind):
 
 def lists(line, new_html, ul, symbol):
     """
+    bullshit 6
     """
     kind = line.count(symbol)
     chars = line.split()
@@ -96,6 +103,7 @@ def lists(line, new_html, ul, symbol):
 
 def remover(new_html):
     """
+    bullshit 7
     """
     remove_cul = new_html.splitlines()
     for i in range(len(remove_cul)):
@@ -106,6 +114,7 @@ def remover(new_html):
     
 def add_ul_tags(almost_html, ul, symbol, prev):
     """
+    bullhshit 8
     """
     text = ""
     if symbol == "-":
@@ -125,6 +134,7 @@ def add_ul_tags(almost_html, ul, symbol, prev):
 
 def text_html(line, new_html, text, br):
     """
+    bullshit 9
     """
     chars = line.split()
     chars.insert(0, "\t")
@@ -155,6 +165,7 @@ def text_html(line, new_html, text, br):
 
 def add_add_spaces(chars):
     """
+    bullshit 10
     """
     add = []
     expand = 0
@@ -170,6 +181,7 @@ def add_add_spaces(chars):
 
 def bold_n_emphasis(html_to_new):
     """
+     bullshit 12
     """
     em = False
     index = html_to_new.find("**", 0, len(html_to_new))
@@ -190,6 +202,7 @@ def bold_n_emphasis(html_to_new):
 
 def md5_n_c(html_to_new):
     """
+    bullshit 13
     """
     c = False
     index = html_to_new.find("[[", 0, len(html_to_new))
